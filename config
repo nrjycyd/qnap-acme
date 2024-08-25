@@ -1,0 +1,26 @@
+# acme 邮箱注册
+EMAIL=abc123@163.com
+
+# acme 域名设置
+DOMAIN=abc123.com
+
+# CA 机构选择
+CA="zerossl"  # 可选择 "letsencrypt"、"buypass" 或 "zerossl"
+
+# DNS类型，根据域名服务商而定
+DNS="dns_ali"  # 可选择 "dns_ali"、"dns_cf" 或 "dns_dp"
+
+# dns_ali settings
+Ali_Key="ABC*********123"
+Ali_Secret="ABC*******************123"
+
+# dns_cf settings
+CF_Key="abc***********123"
+CF_Email="alice@example.com"
+
+# dns_dp settings
+DP_Id="<id>"
+DP_Key="<key>"
+
+
+
