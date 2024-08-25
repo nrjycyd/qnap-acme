@@ -1,6 +1,6 @@
 # qnap-acme
 
-威联通 HTTPS+SSL 泛域名证书自动化脚本
+威联通 HTTPS+SSL 泛域名证书部署脚本
 
 ### 实现效果
 
