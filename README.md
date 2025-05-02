@@ -14,9 +14,10 @@
 
 - `qnap-acme.sh`: 证书申请脚本，需要手动使用 `sudo` 命令执行或添加到 cron 作业；
 
-  > [!note]
+  > [!NOTE]
   >
   > 威联通 cron 服务配置文件：`/etc/config/crontab`
+  >
   > 配置示范：`0 2 1 * * /share/Other/acme-ssl/qnap-acme.sh`
 
 ### 具体操作
@@ -41,4 +42,3 @@
 
 -   请确认下载到本地的文件具有执行权限 (`chmod +x` 或 `sudo chmod +x`)；
 -   `qnap-ser.sh` 脚本用于将成功申请的证书替换到服务器中，**此过程需要管理员权限。因此，执行 `qnap-acme.sh` 脚本时，请务必使用 `sudo` 命令或在管理员账户下运行，以确保证书申请和替换都能成功完成。**
-
