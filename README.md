@@ -20,8 +20,8 @@
   >
   > 配置示范：`0 2 1 * * /share/Other/acme-ssl/qnap-acme.sh`
 
-> [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
+  > [!NOTE]  
+  > Highlights information that users should take into account, even when skimming.
 
 ### 具体操作
 
