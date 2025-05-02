@@ -20,6 +20,9 @@
   >
   > 配置示范：`0 2 1 * * /share/Other/acme-ssl/qnap-acme.sh`
 
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
 ### 具体操作
 
 1.  将 `config`、`qnap-acme.sh`、`qnap-ser.sh` 下载到您希望存放脚本的目录，例如 `/share/Other/acme-ssl/`；
