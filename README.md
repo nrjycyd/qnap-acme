@@ -4,21 +4,41 @@
 
 ### 实现效果
 
-自动申请泛域名证书，证书申请成功后替换 QNAP 服务器默认证书；
+自动申请泛域名证书并替换 QNAP 服务器默认证书。
 
 ### 文件说明
 
-- `config` : 配置文件，设置域名、DNS服务商、CA证书环境等；
-- `qnap-ser.sh` : 证书替换脚本，不需要手动配置或执行；
-- `qnap-acme.sh` : 证书申请脚本，需要手动执行或添加 `cron` 作业；
+- `config`: 配置文件，设置域名、DNS 服务商、CA 证书环境等；
+
+- `qnap-ser.sh`: 证书替换脚本，**由 `qnap-acme.sh` 自动调用，无需用户手动配置或执行**；
+
+- `qnap-acme.sh`: 证书申请脚本，需要手动使用 `sudo` 命令执行或添加到 cron 作业；
+
+  > [!note]
+  >
+  > 威联通 cron 服务配置文件：`/etc/config/crontab`
+  > 配置示范：`0 2 1 * * /share/Other/acme-ssl/qnap-acme.sh`
 
 ### 具体操作
 
-1. 将`config`、`qnap-acme.sh`、`qnap-ser.sh`下载到安装目录；
-2. 配置`config` 文件；
-3. 执行`qnap-acme.sh` 脚本；
+1.  将 `config`、`qnap-acme.sh`、`qnap-ser.sh` 下载到您希望存放脚本的目录，例如 `/share/Other/acme-ssl/`；
+
+2.  配置 `config` 文件；
+
+3.  添加脚本执行权限：
+
+    ```bash
+    sudo chmod +x /share/Other/acme-ssl/qnap-acme.sh
+    ```
+
+4.  执行 `qnap-acme.sh` 脚本：
+
+    ```bash
+    sudo /share/Other/acme-ssl/qnap-acme.sh
+    ```
 
 ### 注意事项
 
-- 文件下载到本地后，请确认有执行权限`chmod +x`或`sudo chmod +x`；
-- `qnap-ser.sh`脚本主要功能是将成功申请的证书替换到服务器中，需要`admin`权限，所以在执行`qnap-acme.sh`脚本时，建议直接在`admin`环境中执行，否则可能会出现证书申请成功但替换失败的情况；
+-   请确认下载到本地的文件具有执行权限 (`chmod +x` 或 `sudo chmod +x`)；
+-   `qnap-ser.sh` 脚本用于将成功申请的证书替换到服务器中，**此过程需要管理员权限。因此，执行 `qnap-acme.sh` 脚本时，请务必使用 `sudo` 命令或在管理员账户下运行，以确保证书申请和替换都能成功完成。**
+
