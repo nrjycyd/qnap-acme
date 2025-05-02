@@ -14,14 +14,12 @@
 
 - `qnap-acme.sh`: 证书申请脚本，需要手动使用 `sudo` 命令执行或添加到 cron 作业；
 
-  > [!NOTE]
-  >
-  > 威联通 cron 服务配置文件：`/etc/config/crontab`
-  >
-  > 配置示范：`0 2 1 * * /share/Other/acme-ssl/qnap-acme.sh`
+> [!NOTE]
+>
+> 威联通 cron 服务配置文件：`/etc/config/crontab`
+>
+> 配置示范：`0 2 1 * * /share/Other/acme-ssl/qnap-acme.sh`
 
-  > [!NOTE]  
-  > Highlights information that users should take into account, even when skimming.
 
 ### 具体操作
 
