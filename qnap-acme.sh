@@ -51,12 +51,16 @@ case "$DNS" in
         export Ali_Secret="$Ali_Secret"
         ;;
     "dns_cf")
-        if [ -z "$CF_Key" ] || [ -z "$CF_Email" ]; then
-            echo "配置文件中缺少 Cloudflare 的必要变量"
+        # 使用 CF_Token（推荐）或 CF_Key + CF_Email
+        if [ -n "$CF_Token" ]; then
+            export CF_Token="$CF_Token"
+        elif [ -z "$CF_Key" ] || [ -z "$CF_Email" ]; then
+            echo "配置文件中缺少 Cloudflare 的必要变量（需要 CF_Token 或 CF_Key + CF_Email）"
             exit 1
+        else
+            export CF_Key="$CF_Key"
+            export CF_Email="$CF_Email"
         fi
-        export CF_Key="$CF_Key"
-        export CF_Email="$CF_Email"
         ;;
     "dns_dp")
         if [ -z "$DP_Id" ] || [ -z "$DP_Key" ]; then
