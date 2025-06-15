@@ -15,8 +15,11 @@ Ali_Key="ABC*********123"
 Ali_Secret="ABC*******************123"
 
 # dns_cf 设置
-CF_Key="abc***********123"
-CF_Email="alice@example.com"
+# 令牌模式
+CF_Token="1e5g*************************rlWt"
+# 密钥+邮箱模式
+#CF_Key="abc***********123"
+#CF_Email="alice@example.com"
 
 # dns_dp 设置
 DP_Id="<id>"
