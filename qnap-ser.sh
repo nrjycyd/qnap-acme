@@ -59,7 +59,7 @@ chmod 600 "/etc/stunnel/backup.cert"
 chmod 600 "/etc/stunnel/backup.key"
 
 # 重启相关服务
-for service in Qthttpd thttpd stunnel quftp; do
+for service in Qthttpd thttpd stunnel ftp; do
     if [ -f "/etc/init.d/${service}.sh" ]; then
         /etc/init.d/${service}.sh restart
         if [ $? -ne 0 ]; then
