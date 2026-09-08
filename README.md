@@ -51,5 +51,5 @@
 
 - 请确认下载到本地的文件具有执行权限（`chmod +x` 或 `sudo chmod +x`），否则会报 `Permission denied`；
 - `qnap-ser.sh` 用于将成功申请的证书替换到服务器中，**此过程需要管理员权限**。因此执行 `qnap-acme.sh` 时请务必使用 `sudo` 或在管理员账户下运行；
-- 网络环境访问 GitHub 可能较慢或失败，可在 `config` 中配置 `PROXY` 走代理下载 acme.sh；
+- 网络环境访问 GitHub 如果较慢或失败，可在 `config` 中配置 `PROXY` 走代理下载 acme.sh；
 - 证书续签依赖 ARI（ACME Renewal Info），脚本会自动处理。
