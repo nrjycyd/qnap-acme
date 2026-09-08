@@ -37,8 +37,16 @@ mkdir -p "$ACME_DIR"
 # 设置 acme 安装变量
 export LE_WORKING_DIR="$ACME_DIR"
 
-# 下载和安装 acme.sh
-curl "https://get.acme.sh" | sh -s email="$EMAIL"
+# 下载和安装 acme.sh（若配置了 PROXY 则通过代理）
+if [ -n "$PROXY" ]; then
+    export http_proxy="$PROXY"
+    export https_proxy="$PROXY"
+    export all_proxy="$PROXY"
+    PROXY_CURL="-x $PROXY"
+else
+    PROXY_CURL=""
+fi
+curl $PROXY_CURL "https://get.acme.sh" | sh -s email="$EMAIL"
 
 # 配置 DNS 环境变量
 case "$DNS" in
